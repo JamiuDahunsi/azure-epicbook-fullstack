@@ -270,6 +270,5 @@ mysql> SELECT * FROM Cart;
 ## 👤 Author
 
 * **Name:** Jamiu Dahunsi
-* **Role:** Network & Cloud Infrastructure Engineer
-* **Organization:** Zone Payment Network
+* **Role:** Cloud & DevOps Engineer
 * **Project:** Full-Stack Cloud Deployment on Microsoft Azure
