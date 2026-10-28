@@ -237,25 +237,24 @@ mysql> SELECT * FROM Cart;
 ## 📷 Deployment Proof & Evidence Gallery
 
 ### Cloud Infrastructure & Networking
-| Deliverable | Description | Evidence Output |
+| Deliverable | Description | Evidence Screenshot |
 | :--- | :--- | :--- |
-| **Virtual Network & Subnets** | Address space `10.0.0.0/16`, `public-subnet` (`10.0.1.0/24`), and `private-db-subnet` (`10.0.2.0/24`) | Subnet blade showing MySQL delegation |
-| **Public & Private NSGs** | Port 80 & 22 open on public subnet; Port 3306 restricted to `10.0.1.0/24` on private subnet | Inbound security rules table |
-| **Network Interface (NIC)** | `epicbook-vm-nic` attached to `public-subnet` with public IP association | IP Configurations blade |
-| **Ubuntu Compute Instance** | `epicbook-vm` running Ubuntu Linux in `South Africa North` | Virtual Machine Overview |
-| **Managed MySQL Instance** | `epicbook-mysql-jamiu` status Ready with Private Access | Azure Database for MySQL Overview |
-| **Subnet Delegation** | MySQL server attached to `private-db-subnet` | MySQL Networking blade |
+| **Virtual Network & Subnets** | Address space `10.0.0.0/16`, `public-subnet` (`10.0.1.0/24`), and `private-db-subnet` (`10.0.2.0/24`) | <img src="images/01-vnet-subnets.png" width="750" alt="VNet and Subnets" /> |
+| **Public & Private NSGs** | Port 80 & 22 open on public subnet; Port 3306 restricted to `10.0.1.0/24` on private subnet | <img src="images/02-public-nsg-rules.png" width="750" alt="Public NSG" /><br/><br/><img src="images/03-private-nsg-rules.png" width="750" alt="Private NSG" /> |
+| **Network Interface (NIC)** | `epicbook-vm-nic` attached to `public-subnet` with public IP association | <img src="images/04-nic-ip-configurations.png" width="750" alt="NIC Configuration" /> |
+| **Ubuntu Compute Instance** | `epicbook-vm` running Ubuntu Linux in `South Africa North` | <img src="images/05-vm-overview.png" width="750" alt="Virtual Machine Overview" /> |
+| **Managed MySQL Instance** | `epicbook-mysql-jamiu` status Ready with Private Access | <img src="images/06-mysql-overview.png" width="750" alt="MySQL Overview" /> |
+| **Subnet Delegation** | MySQL server attached to `private-db-subnet` | <img src="images/07-mysql-networking.png" width="750" alt="MySQL Subnet Delegation" /> |
 
 ### Application & Runtime Verification
-| Deliverable | Description | Command / Output |
+| Deliverable | Description | Evidence Screenshot |
 | :--- | :--- | :--- |
-| **Installed Toolchain** | Node.js v20, npm 10, Git 2.43, Nginx 1.24, MySQL Client 8.0 | `node -v && npm -v && git --version && nginx -v && mysql --version` |
-| **Relational Database Seeds** | 53 Author records and 54 Book records verified in `bookstore` | `SHOW TABLES; SELECT * FROM Author; SELECT * FROM Book;` |
-| **Application Dependencies** | Dependencies compiled into `node_modules/` | `npm install && ls -l` |
-| **Reverse Proxy Configuration** | Nginx configured to pass traffic from Port 80 to Port 8080 | `cat /etc/nginx/sites-available/epicbook && sudo nginx -t` |
-| **Active Backend Listener** | Node process actively listening on port 8080 | `sudo ss -tulpn \| grep 8080` |
-| **Live Web Application** | Production bookstore running on `http://40.123.244.184` | Browser view showing live catalog and cart controls |
-| **Database-Backed Transaction** | E-commerce action verified in database | `SELECT * FROM Cart;` showing item added via web UI |
+| **Installed Toolchain** | Node.js v20, npm 10, Git 2.43, Nginx 1.24, MySQL Client 8.0 | <img src="images/08-software-versions.png" width="750" alt="Toolchain Versions" /> |
+| **Relational Database Seeds** | 53 Author records and 54 Book records verified in `bookstore` | <img src="images/09-database-tables-and-seeds.png" width="750" alt="Database Seeds" /> |
+| **Application & Nginx Config** | Dependencies in `node_modules/` and Nginx reverse proxy syntax verified | <img src="images/10-dependencies-and-nginx-config.png" width="750" alt="Dependencies and Nginx" /> |
+| **Active Backend Listener** | Node process actively listening on internal port 8080 | <img src="images/11-port-8080-listening.png" width="750" alt="Port 8080 Active" /> |
+| **Live Web Application** | Production bookstore running on `http://40.123.244.184` | <img src="images/12-live-browser-application.png" width="750" alt="Live EpicBook Application" /> |
+| **Database-Backed Transaction** | Dynamic cart insertion verified directly in MySQL | <img src="images/13-database-cart-verification.png" width="750" alt="Database Cart Verification" /> |
 
 ---
 
